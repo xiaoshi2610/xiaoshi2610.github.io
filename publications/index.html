@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications – Xiao Shi</title>
+  <meta name="description" content="Publications of Xiao Shi 施骁 — Ph.D. student in Generative AI at UW–Madison" />
+  <style>
+    :root{
+      --maxw: 980px;
+      --gutter: 24px;
+      --accent: #6a7cff;
+      --text: #1a1a1a;
+      --muted: #666;
+      --rule: #d8d8d8;
+      --bg: #ffffff;
+      --shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    /* Top nav */
+    .topbar{
+      position:sticky; top:0; z-index:10; background:rgba(255,255,255,.85);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      border-bottom:1px solid var(--rule);
+    }
+    .nav{
+      max-width:var(--maxw); margin:0 auto; padding:10px var(--gutter);
+      display:flex; gap:18px; justify-content:flex-end; flex-wrap:wrap;
+      font-size:14px;
+    }
+    .nav a{color:var(--muted)}
+    .nav a.active{color:var(--accent); font-weight:600}
+
+    /* Page container */
+    .wrap{max-width:var(--maxw); margin:28px auto 60px; padding:0 var(--gutter)}
+
+    h1{font-size:28px; margin:0 0 6px}
+    .subtitle{color:var(--muted); font-size:15px; margin:0 0 20px}
+
+    .section-title{
+      font-weight:700; font-size:18px; margin:28px 0 14px;
+    }
+
+    /* Publications */
+    .pub-intro{
+      max-width: 720px;
+      font-size:15px;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .pub-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      counter-reset: pub-counter;
+    }
+    .pub-item{
+      padding:12px 0 16px;
+      border-bottom:1px solid #eee;
+      counter-increment: pub-counter;
+    }
+    .pub-item:last-child{
+      border-bottom:none;
+    }
+    .pub-index{
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:2px;
+    }
+    .pub-index::before{
+      content: "[" counter(pub-counter) "] ";
+    }
+    .pub-title{
+      font-weight:600;
+      margin:0 0 4px;
+    }
+    .pub-authors{
+      margin:0 0 2px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .pub-meta{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .pub-links{
+      margin-top:4px;
+      font-size:14px;
+    }
+    .pub-links a{
+      margin-right:10px;
+    }
+
+    footer{
+      margin:40px 0 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <div class="topbar">
+    <nav class="nav" aria-label="Primary">
+      <!-- 返回首页 -->
+      <a href="https://xiaoshi2610.github.io/#about">about</a>
+      <!-- 当前页面高亮 -->
+      <a class="active" href="https://xiaoshi2610.github.io/publications/">publications</a>
+      <!-- CV 链接（根据你的路径改） -->
+      <a href="https://xiaoshi2610.github.io/assets/CV_12012025.pdf" target="_blank" rel="noopener">cv</a>
+    </nav>
+  </div>
+
+  <main class="wrap">
+    <header>
+      <h1>Publications</h1>
+      <p class="subtitle">Xiao Shi 施骁</p>
+      <p class="pub-intro">
+        A list of my research works in generative modeling, inverse problems, distribution shift, and medical imaging.
+        Authors are listed in publication order, with my name highlighted in bold.
+      </p>
+    </header>
+
+    <!-- Selected / published papers -->
+    <section>
+      <h2 class="section-title">Selected papers</h2>
+      <ol class="pub-list">
+
+        <!-- Paper 1 示例：EigenScore -->
+        <li class="pub-item">
+          <div class="pub-index"></div>
+          <p class="pub-title">
+            EigenScore: OOD Detection using Covariance in Diffusion Models
+          </p>
+          <p class="pub-authors">
+            <strong>Xiao Shi</strong>, Coauthor 1, Coauthor 2, Ulugbek S. Kamilov
+          </p>
+          <p class="pub-meta">
+            Preprint, 2025.
+          </p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2510.07206" target="_blank" rel="noopener">arXiv</a>
+            <!--
+            <a href="https://github.com/xxx/xxx" target="_blank" rel="noopener">code</a>
+            <a href="/assets/eigenscore_poster.pdf" target="_blank" rel="noopener">poster</a>
+            -->
+          </div>
+        </li>
+
+        <!-- 下面按需要复制修改即可 -->
+        <!--
+        <li class="pub-item">
+          <div class="pub-index"></div>
+          <p class="pub-title">Your Next Paper Title</p>
+          <p class="pub-authors">
+            <strong>Xiao Shi</strong>, ...
+          </p>
+          <p class="pub-meta">
+            Conference / Journal, Year.
+          </p>
+          <div class="pub-links">
+            <a href="#" target="_blank" rel="noopener">arXiv</a>
+            <a href="#" target="_blank" rel="noopener">code</a>
+          </div>
+        </li>
+        -->
+
+      </ol>
+    </section>
+
+    <!-- Under review / in preparation（可选） -->
+    <section>
+      <h2 class="section-title">Under review & in preparation</h2>
+      <ol class="pub-list">
+        <!-- 示例占位 -->
+        <li class="pub-item">
+          <div class="pub-index"></div>
+          <p class="pub-title">
+            Diffusion-Driven Uncertainty Quantification in Medical Imaging
+          </p>
+          <p class="pub-authors">
+            <strong>Xiao Shi</strong>, Coauthor A, Coauthor B, Ulugbek S. Kamilov
+          </p>
+          <p class="pub-meta">
+            Under review, 2025.
+          </p>
+          <!-- 没有公开链接可以不写 pub-links -->
+        </li>
+
+        <!--
+        <li class="pub-item">
+          <div class="pub-index"></div>
+          <p class="pub-title">
+            Statistical Geometry of Reverse Diffusion Trajectories
+          </p>
+          <p class="pub-authors">
+            <strong>Xiao Shi</strong>, ...
+          </p>
+          <p class="pub-meta">
+            Manuscript in preparation, 2025.
+          </p>
+        </li>
+        -->
+      </ol>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Xiao Shi. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
