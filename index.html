@@ -242,6 +242,60 @@
         scroll-behavior: auto;
       }
     }
+
+  /* WeChat QR Code */
+.wechat {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.wechat-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.wechat-icon:hover {
+  color: var(--accent);
+}
+
+.wechat-qr {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  padding: 12px;
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  z-index: 20;
+}
+
+.wechat-qr img {
+  width: 100%;
+  display: block;
+}
+
+.wechat-qr span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.wechat:hover .wechat-qr,
+.wechat:focus-within .wechat-qr,
+.wechat.open .wechat-qr {
+  display: block;
+}
+    
   </style>
 </head>
 
@@ -460,9 +514,28 @@
         </svg>
       </a>
 
+      <!-- WeChat -->
+<div class="wechat">
+  <button class="wechat-icon"
+          type="button"
+          aria-label="Show WeChat QR code"
+          aria-expanded="false"
+          onclick="toggleWeChat(this)">
+    <svg viewBox="0 0 24 24" fill="currentColor"
+         width="22" height="22" aria-hidden="true">
+      <path d="M8.7 3C4.4 3 1 5.8 1 9.2c0 1.9 1 3.6 2.7 4.7L3 16.5l3-1.5c.9.3 1.8.4 2.7.4h.5c-.2-.6-.3-1.2-.3-1.8 0-3.5 3.3-6.3 7.3-6.3.5 0 1 .1 1.5.2C16.8 4.8 13.2 3 8.7 3zM6 8.2a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5.3 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM16.3 8.5c-3.7 0-6.7 2.4-6.7 5.4s3 5.4 6.7 5.4c.7 0 1.5-.1 2.2-.3l2.4 1.2-.6-2.1c1.6-1 2.7-2.5 2.7-4.2 0-3-3-5.4-6.7-5.4zm-2.2 4.5a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6zm4.5 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z"/>
+    </svg>
+  </button>
+
+  <div class="wechat-qr">
+    <img src="assets/wechat.png" alt="WeChat QR code">
+    <span>Scan to connect on WeChat</span>
+  </div>
+</div>      
     </div>
 
 
+    
     <!-- Footer -->
     <footer>
       © <span id="year"></span> Xiao Shi. All rights reserved.
@@ -473,6 +546,12 @@
   <script>
     document.getElementById('year').textContent =
       new Date().getFullYear();
+
+    function toggleWeChat(button) {
+      const container = button.closest(".wechat");
+      const isOpen = container.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    }
   </script>
 
 </body>
