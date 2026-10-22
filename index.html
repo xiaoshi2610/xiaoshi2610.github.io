@@ -290,10 +290,18 @@
   color: var(--muted);
 }
 
-.wechat:hover .wechat-qr,
-.wechat:focus-within .wechat-qr,
-.wechat.open .wechat-qr {
-  display: block;
+/* Desktop: show QR code on hover */
+@media (hover: hover) {
+  .wechat:hover .wechat-qr {
+    display: block;
+  }
+}
+
+/* Mobile: show QR code when tapped */
+@media (hover: none) {
+  .wechat.open .wechat-qr {
+    display: block;
+  }
 }
     
   </style>
@@ -548,6 +556,10 @@
       new Date().getFullYear();
 
     function toggleWeChat(button) {
+      if (window.matchMedia("(hover: hover)").matches) {
+        return;
+      }
+    
       const container = button.closest(".wechat");
       const isOpen = container.classList.toggle("open");
       button.setAttribute("aria-expanded", String(isOpen));
